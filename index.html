@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>calculator</title>
+        <script>
+         function calculation(jadu){
+            var flex=document.getElementById("flex");
+             if(jadu=='c'){
+                flex.innerHTML="";
+             } 
+             else{
+                flex.innerHTML+=jadu;
+               if(jadu=='')
+               {var h=eval(flex.innerHTML);
+                flex.innerHTML+=("="+h);}
+            }
+         }
+        </script>
+        <style>
+            body{ padding-left: 450px;
+                padding-top: 150px;}
+          table{
+              border: 2px solid black;
+              background-color: rgb(54, 189, 50);}
+          td{
+              height: 50px;
+              width: 100px;
+              text-align: center; }  
+          input:hover{
+              text-size: 200%;
+              background-color: rgb(126, 124, 196); }
+          td#flex{
+              background-color: cornsilk;
+              text-align: left;
+              font-size: 200%;
+              }  
+        </style>
+    </head>
+    <body>
+        <h1>Naitik's Mishra calculator</h1>
+        <table border="2px">
+            <tr >
+                <td colspan="4"  id="flex"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="c" id="common" onclick="calculation('c')"></td>
+                <td><input type="button" value="%" id="common" onclick="calculation('%')"></td>
+                <td><input type="button" value="/" id="common" onclick="calculation('/')"></td>
+                <td><input type="button" value="*" id="common" onclick="calculation('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" id="common" onclick="calculation('7')"></td>
+                <td><input type="button" value="8" id="common" onclick="calculation('8')"></td>
+                <td><input type="button" value="9" id="common" onclick="calculation('9')"></td>
+                <td><input type="button" value="-" id="common" onclick="calculation('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" id="common" onclick="calculation('4')"></td>
+                <td><input type="button" value="5" id="common" onclick="calculation('5')"></td>
+                <td><input type="button" value="6" id="common" onclick="calculation('6')"></td>
+                <td rowspan="2"><input type="button" value="+" id="common" onclick="calculation('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" id="common" onclick="calculation('1')"></td>
+                <td><input type="button" value="2" id="common" onclick="calculation('2')"></td>
+                <td><input type="button" value="3" id="common" onclick="calculation('3')"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="0" id="common" onclick="calculation('0')"></td>
+                <td><input type="button" value="." id="common" onclick="calculation('.')"></td>
+                <td><input type="button" value="=" id="display" onclick="calculation('')"></td>
+            </tr>
+        </table>
+    </body>
+</html>
